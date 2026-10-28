@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@media print {
+  /* Hide the main app wrapper during printing */
+  #root, .no-print, #active_socioeconomic_editor > div:not(.print-container) {
+    display: none !important;
+  }
+  
+  /* Force display of the printable document */
+  .print-container {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    background: white !important;
+    color: #1e293b !important;
+    font-size: 11px !important;
+  }
+
+  body, html {
+    background: white !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Prevent breaks within tables or blocks */
+  tr, .print-card, table {
+    page-break-inside: avoid !important;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid !important;
+  }
+
+  /* Light high-contrast theme for tables on physical paper */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+}
